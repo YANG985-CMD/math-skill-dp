@@ -17,7 +17,11 @@ Produce a submission-ready CUMCM competition paper from frozen results, audited 
 ## Operating Workflow
 
 1. **Verify prerequisites**: frozen results exist, figures pass QA, claims are verified.
-2. **Generate frozen-result tables**:
+2. **Review competition-winning patterns**:
+
+       Read references/competition-winning-patterns.md — abstract formula, validation requirements, figure quotas, and scoring vulnerabilities.
+
+3. **Generate frozen-result tables**:
 
        python scripts/render_frozen_results.py results/frozen-results.json --root PROJECT_DIR --out paper/generated/frozen-results.md
 
@@ -73,3 +77,28 @@ PROJECT_DIR/
 - Recheck the CURRENT YEAR's official CUMCM notice before every formal submission.
 - A failed format check must be fixed before delivery. Do not deliver with known audit failures.
 - Perform a full page-by-page visual review of the final PDF.
+
+## Abstract Writing (The 90-Second Gate)
+
+The abstract MUST follow the competition-winning pattern:
+- **20%**: Problem restated in modeling language (not copied from prompt)
+- **50%**: Model architecture in "overall → then → finally" structure with semicolons
+- **30%**: Quantified results with baseline comparison (e.g., "32% reduction: 285 vs 420 baseline")
+- **Technical verbs**: Use 融合, 耦合, 重构, 嵌入 — not 采用, 使用
+- **No charts, formula numbers, or reference citations in abstract**
+- **Revise at least 5 times**; write it last, after all results are frozen
+
+## Common Fatal Errors (Direct Disqualification Risk)
+
+| Error | Severity |
+|-------|----------|
+| Fabricated data or results | **Instant zero** |
+| No validation chapter (sensitivity + baseline comparison) | **Fatal** |
+| Algorithm stacking without justification (5+ models, no rationale) | **Fatal** |
+| Results without units | **Serious** |
+| Figure/table numbers inconsistent with text references | **Serious** |
+| Abstract reads like introduction (not self-contained) | **Serious** |
+| "见下图" instead of "如图X所示" | **Medium** |
+| Core formulas not numbered | **Medium** |
+
+For full competition strategy, read `references/competition-winning-patterns.md` before starting delivery.

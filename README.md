@@ -34,6 +34,7 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 - 新增 `scripts/install_skill_pack.py`：一键安装全部 4 个 Skill 到 Codex 技能目录。
 - 新增 `tests/test_matlab_templates.py`：自动验证 18 个 MATLAB 模板的文档、输入验证、错误处理和输出结构完整性。
 - 重构 `references/algorithm-templates.md` 为 MATLAB-first 分类目录，覆盖全部 9 大任务族的可执行模板锚点。
+- 新增 `references/competition-winning-patterns.md`：基于国赛国一（2022-2024）、美赛 O 奖（2004-2024）论文的系统性经验集成。涵盖摘要黄金公式、灵敏度分析标准、图表配额要求、选题策略、时间分配和 10 条致命错误检查清单。
 - 正式将 Skill 更名为 `math-skill-dp`。
 
 ### v2.1.0 - 结构真实性、候选晋级与 CUMCM LaTeX（2026-07-19）

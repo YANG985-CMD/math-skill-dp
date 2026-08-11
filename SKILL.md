@@ -101,6 +101,7 @@ If the user is unavailable and time is limited, keep the baseline, document the 
 - Paper planning or writing: read <code>references/argument-first-paper-writing.md</code>, <code>references/paper-writing.md</code>, and the templates under <code>assets/templates/</code>.
 - CUMCM LaTeX formatting or submission preflight: read <code>references/cumcm-2026-latex.md</code>, start from <code>assets/latex/cumcm-2026/paper.tex</code>, build with <code>scripts/build_cumcm_latex.py</code>, and audit with <code>scripts/audit_cumcm_latex.py</code>. Recheck the current official notice before every formal submission.
 - Time-limited work: read <code>references/competition-timeline.md</code>.
+- **Competition-winning strategy — abstract writing, validation standards, paper scoring, topic selection, visualization thresholds, vulnerability checklist**: read <code>references/competition-winning-patterns.md</code>. Apply its abstract formula, sensitivity analysis requirements, and figure count rules during <code>delivery</code>.
 - Prompt design: read <code>references/ai-prompt-patterns.md</code>.
 - Skill maintenance or generalization testing on historical problems: read <code>references/blind-benchmarking.md</code>, then use <code>scripts/blind_modeling_benchmark.py</code>. Keep judge rubrics outside the evaluated agent context until responses are frozen.
 

@@ -14,6 +14,18 @@ Turn modeling results into publication-grade figures. Every figure starts with a
 - When you need to audit existing figures for publication compliance
 - When selecting chart types for specific data structures
 
+## Competition-Grade Figure Requirements
+
+Read `references/competition-winning-patterns.md` Section 4 for detailed standards. Minimum delivery:
+
+1. **Problem analysis framework diagram** — flow chart of sub-problem decomposition
+2. **Algorithm flow chart** — pseudocode or flowchart of core solution steps
+3. **Main result comparison** — bar chart with error bars comparing methods
+4. **Sensitivity analysis** — parameter-response curves or heatmap (≥ 2 parameters, ≥ 3 perturbation levels)
+5. **Prediction/trend plot** — fitted vs observed, with validation split marker
+
+O-prize standard: 6-8 figures per 10 pages. Every figure must be cited as "如图X所示" (not "见下图").
+
 ## Figure Design Process
 
 1. **Answer the core question first**: "What is the ONE thing this figure must prove?"
@@ -48,11 +60,13 @@ Run `scripts/audit_figure_bundle.py` for programmatic checks. Then visually veri
 - [ ] All axes have labels with units
 - [ ] Legend is present and non-redundant
 - [ ] Text is readable at final size (≥ 6.5pt)
-- [ ] Colors are distinguishable in grayscale
+- [ ] Colors are distinguishable in grayscale (use Wong's palette)
 - [ ] Baseline or reference is marked when applicable
-- [ ] Uncertainty or statistics are shown
+- [ ] Uncertainty or statistics are shown (error bars, CI, or distribution)
 - [ ] No AI-generated imagery is used as empirical evidence
 - [ ] Vector output renders correctly
+- [ ] All 5 competition-required figure types are present
+- [ ] Figures are cited in text as "如图X所示" with auto-numbered references
 
 ## Non-Negotiable Rules
 
