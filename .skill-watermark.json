@@ -3,7 +3,7 @@
   "watermark_type": "render-invisible-ed25519-provenance",
   "owner": "YANG985-CMD",
   "watermark_id": "YANG985-CMD-MMS-2026-v14",
-  "repository": "https://github.com/YANG985-CMD/Math-Modeling-Solver",
+  "repository": "https://github.com/YANG985-CMD/math-skill-dp",
   "algorithm": "Ed25519",
   "canonical_hash": "SHA-256",
   "signed_at_utc": "2026-07-20T08:00:08+00:00",

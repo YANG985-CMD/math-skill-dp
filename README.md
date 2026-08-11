@@ -1,6 +1,6 @@
 <div align="center">
 
-# Math Modeling Solver
+# math-skill-dp
 # 非常强大的数学建模skill，可以分别复制我的skill链接和其他数学建模skill的链接，然后问一下codex，这两个skill哪个更好。
 
 **从一道数学建模题，到可复现模型、论文级图表与完整竞赛论文。**
@@ -21,7 +21,7 @@
 
 ## 它是什么
 
-Math Modeling Solver 不是只会罗列算法的提示词集合。它是一套以证据为中心的数学建模工作流，把题目拆解、数据检查、模型选择、代码执行、鲁棒性验证、科学绘图和论文写作连接为一个可审计过程。
+math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据为中心的数学建模工作流，把题目拆解、数据检查、模型选择、代码执行、鲁棒性验证、科学绘图和论文写作连接为一个可审计过程。
 
 它要求每个关键结论都能追溯到真实数据、执行代码、结果表、图、公式或可靠来源，并通过五道证据门阻止“代码没有运行、图表没有来源、论文数字互相矛盾”等常见问题进入最终交付。
 
@@ -172,21 +172,21 @@ Math Modeling Solver 不是只会罗列算法的提示词集合。它是一套�
 Windows PowerShell：
 
 ```powershell
-git clone https://github.com/YANG985-CMD/Math-Modeling-Solver.git `
-  "$HOME\.codex\skills\math-modeling-solver"
+git clone https://github.com/YANG985-CMD/math-skill-dp.git `
+  "$HOME\.codex\skills\math-skill-dp"
 ```
 
 macOS / Linux：
 
 ```bash
-git clone https://github.com/YANG985-CMD/Math-Modeling-Solver.git \
-  ~/.codex/skills/math-modeling-solver
+git clone https://github.com/YANG985-CMD/math-skill-dp.git \
+  ~/.codex/skills/math-skill-dp
 ```
 
 重新启动 Codex 会话后，可直接调用：
 
 ```text
-$math-modeling-solver
+$math-skill-dp
 ```
 
 ## 快速开始
@@ -194,7 +194,7 @@ $math-modeling-solver
 ### 1. 直接解决建模题
 
 ```text
-使用 $math-modeling-solver 解决这道数学建模题。
+使用 $math-skill-dp 解决这道数学建模题。
 先拆分子问题、审计数据并建立简单基线，再比较候选模型。
 代码必须真实运行，最后给出稳健性分析、论文级图表和结论边界。
 ```
@@ -393,29 +393,29 @@ problem-a/
 ## 典型用法
 
 ```text
-使用 $math-modeling-solver 检查这个时间序列方案是否存在数据泄漏，
+使用 $math-skill-dp 检查这个时间序列方案是否存在数据泄漏，
 设计滚动验证，并把论文中的预测结论映射到真实结果表。
 ```
 
 ```text
-使用 $math-modeling-solver 检查 TOPSIS 排名为什么不稳定，
+使用 $math-skill-dp 检查 TOPSIS 排名为什么不稳定，
 设计权重扰动实验，并判断是否需要组合评价模型。
 ```
 
 ```text
-使用 $math-modeling-solver 根据已有结果重构论文图表。
+使用 $math-skill-dp 根据已有结果重构论文图表。
 每张图先确定一个主结论，再生成 SVG、PDF、PNG、灰度图和 QA 报告。
 ```
 
 ```text
-使用 $math-modeling-solver 写数学建模竞赛论文。
+使用 $math-skill-dp 写数学建模竞赛论文。
 先冻结权威结果和术语，再组织摘要、模型、结果、验证、讨论与结论。
 ```
 
 ## Skill 结构
 
 ```text
-math-modeling-solver/
+math-skill-dp/
 ├─ SKILL.md
 ├─ agents/openai.yaml
 ├─ scripts/
@@ -487,6 +487,4 @@ uv run --with pyyaml python `
 
 ---
 
-如果你需要的是一个能从题目一直工作到可复现论文交付的数学建模 Agent，直接从 `$math-modeling-solver` 开始。
-
-<!-- skill-provenance:v1;owner=YANG985-CMD;id=YANG985-CMD-MMS-2026-v14;path=README.md;sha256=10f5bfa5c55026ed01b20618727823e1db52715e3e5b354721cabcac963d68eb;pub=0ofp8dKKJWMQK0LUC4dZDC8cynCRQlggy7cVeq7NfBo=;sig=UkNxUC-Cw0qJhp9G8aQRB8tOZjAAxe0ZuvVsTuoiMOKwDlamlZ43GceO-Atch6CI9BEmF7IovzaZvDq19ZkPCg== -->
+如果你需要的是一个能从题目一直工作到可复现论文交付的数学建模 Agent，直接从 `$math-skill-dp` 开始。

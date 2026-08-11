@@ -1,4 +1,4 @@
 interface:
-  display_name: "Math Modeling Solver"
+  display_name: "math-skill-dp"
   short_description: "Evidence-gated modeling with audited CUMCM LaTeX delivery"
-  default_prompt: "Use $math-modeling-solver to solve the modeling task, validate evidence, and deliver reproducible Python or MATLAB results, publication figures, or an audited CUMCM LaTeX paper."
+  default_prompt: "Use $math-skill-dp to solve the modeling task, validate evidence, and deliver reproducible Python or MATLAB results, publication figures, or an audited CUMCM LaTeX paper."

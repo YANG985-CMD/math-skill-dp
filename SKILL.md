@@ -1,9 +1,9 @@
 ---
-name: math-modeling-solver
+name: math-skill-dp
 description: End-to-end mathematical modeling problem solver for competitions and applied projects. Use for problem decomposition, data auditing, model-family selection, executable Python or MATLAB solutions, robustness analysis, publication-grade quantitative plots and code-native modeling diagrams, argument-first competition-paper writing, reproducibility, claim-to-evidence tracing, and CUMCM LaTeX paper production or format preflight. Also use when a modeling task asks what chart to use, requests paper-ready figures, multi-panel layouts, forecasting or optimization plots, sensitivity figures, Chinese scientific plotting, vector export, or figure QA.
 ---
 
-# Math Modeling Solver
+# math-skill-dp
 
 Turn a modeling prompt into a reproducible result and a defensible paper. Optimize for evidence, clarity, and contest time rather than method novelty alone.
 
@@ -142,5 +142,3 @@ Add a component only when all are true:
 8. The remaining time supports independent validation.
 
 Otherwise retain the baseline and improve data quality, formulation, diagnostics, or explanation first.
-
-<!-- skill-provenance:v1;owner=YANG985-CMD;id=YANG985-CMD-MMS-2026-v14;path=SKILL.md;sha256=62e1f59dd5b4d5ab3f1fb27962a6e7335e5901bf91d45891f9d95819f3a228b9;pub=0ofp8dKKJWMQK0LUC4dZDC8cynCRQlggy7cVeq7NfBo=;sig=QJIMgrKFuNjsCOt1yLVq39wR2lS5yj6aEuT-H1l1eei3fNDLeRHhdWUFq-K9oraGnw5maxku6Un9JadsDjtPAw== -->

@@ -199,7 +199,7 @@ def download_material(url: str, destination: Path, expected_hash: str) -> None:
     last_error: Exception | None = None
     for attempt in range(3):
         request = urllib.request.Request(
-            safe_url, headers={"User-Agent": "math-modeling-solver"}
+            safe_url, headers={"User-Agent": "math-skill-dp"}
         )
         try:
             with urllib.request.urlopen(request, timeout=120) as response, temporary.open(

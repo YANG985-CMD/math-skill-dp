@@ -349,7 +349,7 @@ def build_parser() -> argparse.ArgumentParser:
     stamp_parser.add_argument("--private-key", type=Path, required=True)
     stamp_parser.add_argument("--owner", default="YANG985-CMD")
     stamp_parser.add_argument("--watermark-id", default="YANG985-CMD-MMS-2026-v1")
-    stamp_parser.add_argument("--repository", default="https://github.com/YANG985-CMD/Math-Modeling-Solver")
+    stamp_parser.add_argument("--repository", default="https://github.com/YANG985-CMD/math-skill-dp")
     stamp_parser.add_argument("--marker-file", action="append", dest="marker_files", default=[])
 
     verify_parser = subparsers.add_parser("verify", help="Verify a stamped Skill bundle")
