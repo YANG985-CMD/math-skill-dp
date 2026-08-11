@@ -29,7 +29,10 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 ### v2.7.0 - 算法深度增强（2026-08-11）
 
 - 升级全部 7 个 MATLAB 模板至竞赛级：TOPSIS（4 种归一化 + 退化保护）、熵权法（非负平移 + 零散度保护）、灰色预测（光滑比/级比预检 + ABCD 等级评定）、遗传算法 / 粒子群（收敛历史追踪 + 智能默认参数）、线性规划（对偶变量 / 影子价格）、整数规划（MIP gap 计算 + 最优/可行区分）。
-- 新增 8 个 MATLAB 核心算法：`vikor.m`、`critic_weight.m`（评价排序）、`simulated_annealing.m`（优化）、`kalman_filter.m`（状态估计）、`monte_carlo_simulation.m`、`bootstrap_ci.m`（不确定性）、`dbscan.m`（聚类）、`dijkstra.m`（图论）。
+- 新增 11 个 MATLAB 核心算法：`vikor.m`、`critic_weight.m`（评价排序）、`simulated_annealing.m`（优化）、`kalman_filter.m`（状态估计）、`monte_carlo_simulation.m`、`bootstrap_ci.m`（不确定性）、`dbscan.m`（聚类）、`dijkstra.m`（图论）、`vns.m`（变邻域搜索）、`nsga2.m`（多目标 NSGA-II）、`random_forest.m`（随机森林分类/回归）。
+- 还原 3 个专业子 Skill 架构：`$audit-modeling-evidence`（证据审计）、`$build-modeling-figures`（图表生成）、`$deliver-cumcm-paper`（CUMCM 论文交付），可独立调用。
+- 新增 `scripts/install_skill_pack.py`：一键安装全部 4 个 Skill 到 Codex 技能目录。
+- 新增 `tests/test_matlab_templates.py`：自动验证 18 个 MATLAB 模板的文档、输入验证、错误处理和输出结构完整性。
 - 重构 `references/algorithm-templates.md` 为 MATLAB-first 分类目录，覆盖全部 9 大任务族的可执行模板锚点。
 - 正式将 Skill 更名为 `math-skill-dp`。
 
@@ -164,7 +167,7 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 
 仓库同时提供 MATLAB 与 Python 两套可执行模板。MATLAB 是官方首选数值后端，模板均已做输入校验、退化数据保护和诊断输出；Python 模板用于有确切理由的辅助计算。模板用于快速建立可执行起点，不能替代针对真实数据的适配、执行和验证。
 
-### MATLAB 模板（15 个）
+### MATLAB 模板（18 个）
 
 | 类别 | 算法 | 文件 |
 | --- | --- | --- |
@@ -179,6 +182,9 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 | 优化决策 | 遗传算法 | `assets/code/matlab/genetic_algorithm.m` |
 | 优化决策 | 粒子群优化 | `assets/code/matlab/particle_swarm.m` |
 | 优化决策 | 模拟退火 | `assets/code/matlab/simulated_annealing.m` |
+| 优化决策 | 变邻域搜索 VNS | `assets/code/matlab/vns.m` |
+| 优化决策 | 多目标 NSGA-II | `assets/code/matlab/nsga2.m` |
+| 预测分类 | 随机森林 | `assets/code/matlab/random_forest.m` |
 | 不确定性 | 蒙特卡洛仿真 | `assets/code/matlab/monte_carlo_simulation.m` |
 | 不确定性 | Bootstrap 置信区间 | `assets/code/matlab/bootstrap_ci.m` |
 | 聚类分析 | DBSCAN 密度聚类 | `assets/code/matlab/dbscan.m` |
@@ -203,7 +209,7 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 
 ## 安装
 
-### Codex
+### 方式一：git clone（推荐）
 
 Windows PowerShell：
 
@@ -217,6 +223,23 @@ macOS / Linux：
 ```bash
 git clone https://github.com/YANG985-CMD/math-skill-dp.git \
   ~/.codex/skills/math-skill-dp
+```
+
+### 方式二：完整 Skill Pack 安装（含子 Skill）
+
+```bash
+git clone https://github.com/YANG985-CMD/math-skill-dp.git
+cd math-skill-dp
+python scripts/install_skill_pack.py
+```
+
+`install_skill_pack.py` 会安装主 Skill + 3 个专业子 Skill（`$audit-modeling-evidence`、`$build-modeling-figures`、`$deliver-cumcm-paper`）。
+
+### 更新
+
+```powershell
+git -C "$HOME\.codex\skills\math-skill-dp" pull
+python "$HOME\.codex\skills\math-skill-dp\scripts\install_skill_pack.py" --force --clean-update
 ```
 
 重新启动 Codex 会话后，可直接调用：
@@ -454,6 +477,12 @@ problem-a/
 math-skill-dp/
 ├─ SKILL.md
 ├─ agents/openai.yaml
+├─ audit-modeling-evidence/         # 专业 Skill：证据审计
+│  └─ SKILL.md
+├─ build-modeling-figures/          # 专业 Skill：图表生成
+│  └─ SKILL.md
+├─ deliver-cumcm-paper/             # 专业 Skill：CUMCM 论文交付
+│  └─ SKILL.md
 ├─ scripts/
 │  ├─ init_modeling_project.py
 │  ├─ audit_dataset.py
