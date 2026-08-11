@@ -26,6 +26,13 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 
 ## 版本更新日志
 
+### v2.7.0 - 算法深度增强（2026-08-11）
+
+- 升级全部 7 个 MATLAB 模板至竞赛级：TOPSIS（4 种归一化 + 退化保护）、熵权法（非负平移 + 零散度保护）、灰色预测（光滑比/级比预检 + ABCD 等级评定）、遗传算法 / 粒子群（收敛历史追踪 + 智能默认参数）、线性规划（对偶变量 / 影子价格）、整数规划（MIP gap 计算 + 最优/可行区分）。
+- 新增 8 个 MATLAB 核心算法：`vikor.m`、`critic_weight.m`（评价排序）、`simulated_annealing.m`（优化）、`kalman_filter.m`（状态估计）、`monte_carlo_simulation.m`、`bootstrap_ci.m`（不确定性）、`dbscan.m`（聚类）、`dijkstra.m`（图论）。
+- 重构 `references/algorithm-templates.md` 为 MATLAB-first 分类目录，覆盖全部 9 大任务族的可执行模板锚点。
+- 正式将 Skill 更名为 `math-skill-dp`。
+
 ### v2.1.0 - 结构真实性、候选晋级与 CUMCM LaTeX（2026-07-19）
 
 - 新增语义契约：计算前固定坐标轴、符号、单位、指标公式、约束含义，以及“观测/推断/表观/因果”边界。
@@ -153,16 +160,46 @@ math-skill-dp 不是只会罗列算法的提示词集合。它是一套以证据
 
 图包审计器会检查缺失坐标轴、过小字号、文字越界、DPI、最终尺寸、矢量文字、源数据、统计说明和复现命令。AI 生成图片不能充当定量结果证据。
 
+## 算法模板库
+
+仓库同时提供 MATLAB 与 Python 两套可执行模板。MATLAB 是官方首选数值后端，模板均已做输入校验、退化数据保护和诊断输出；Python 模板用于有确切理由的辅助计算。模板用于快速建立可执行起点，不能替代针对真实数据的适配、执行和验证。
+
+### MATLAB 模板（15 个）
+
+| 类别 | 算法 | 文件 |
+| --- | --- | --- |
+| 综合评价 | TOPSIS（4 种归一化） | `assets/code/matlab/topsis.m` |
+| 综合评价 | 熵权法 | `assets/code/matlab/entropy_weight.m` |
+| 综合评价 | CRITIC 客观赋权 | `assets/code/matlab/critic_weight.m` |
+| 综合评价 | VIKOR 妥协排序 | `assets/code/matlab/vikor.m` |
+| 预测估计 | 灰色预测 GM(1,1)（等级评定） | `assets/code/matlab/grey_prediction.m` |
+| 预测估计 | 卡尔曼滤波 | `assets/code/matlab/kalman_filter.m` |
+| 优化决策 | 线性规划（影子价格） | `assets/code/matlab/linear_programming.m` |
+| 优化决策 | 整数规划（MIP gap） | `assets/code/matlab/integer_programming.m` |
+| 优化决策 | 遗传算法 | `assets/code/matlab/genetic_algorithm.m` |
+| 优化决策 | 粒子群优化 | `assets/code/matlab/particle_swarm.m` |
+| 优化决策 | 模拟退火 | `assets/code/matlab/simulated_annealing.m` |
+| 不确定性 | 蒙特卡洛仿真 | `assets/code/matlab/monte_carlo_simulation.m` |
+| 不确定性 | Bootstrap 置信区间 | `assets/code/matlab/bootstrap_ci.m` |
+| 聚类分析 | DBSCAN 密度聚类 | `assets/code/matlab/dbscan.m` |
+| 网络图论 | Dijkstra 最短路 | `assets/code/matlab/dijkstra.m` |
+
+### Python 模板（16 个）
+
+综合评价：`topsis.py`、`entropy_weight.py`、`ahp_entropy_weight.py`、`topsis_grey_relation.py`、`dea_topsis.py`；预测：`grey_prediction.py`、`arima_forecast.py`、`gm11_markov.py`；优化：`linear_programming.py`、`integer_programming.py`、`genetic_algorithm.py`、`particle_swarm.py`、`ga_sa.py`、`svm_pso.py`；分类：`pca_svm.py`；绘图：`modeling_plotkit.py`（论文级绘图与图表 QA）。
+
+完整分类锚点与组合模型入口见 [`references/algorithm-templates.md`](references/algorithm-templates.md)。
+
 ## 支持的模型族
 
-- **综合评价**：TOPSIS、AHP、熵权法、DEA、灰色关联、组合评价。
-- **预测分类**：GM(1,1)、ARIMA、回归、随机森林、XGBoost、SVM、神经网络。
+- **综合评价**：TOPSIS、AHP、熵权法、CRITIC、VIKOR、DEA、灰色关联、组合评价。
+- **预测分类**：GM(1,1)、ARIMA、回归、随机森林、XGBoost、SVM、神经网络、卡尔曼滤波。
 - **优化决策**：线性规划、整数规划、动态规划、遗传算法、粒子群、模拟退火、多目标优化。
-- **网络路径**：最短路、最大流、中心性、选址、调度、路径规划。
+- **网络路径**：最短路（Dijkstra）、最大流、中心性、选址、调度、路径规划。
 - **机理仿真**：微分方程、状态转移、排队、库存、可靠性、Monte Carlo、Agent-based 模型。
-- **统计分析**：聚类、PCA、假设检验、时间序列、生存分析、因果设计。
+- **统计分析**：聚类（DBSCAN 等）、PCA、假设检验、Bootstrap、时间序列、生存分析、因果设计。
 
-仓库包含 Python 与 MATLAB 基线模板。模板用于快速建立可执行起点，不能替代针对真实数据的适配、执行和验证。论文图可使用 Python/Matplotlib 或 MATLAB 原生生成；两条路线都必须保留源数据、生成代码、统计定义、矢量/位图导出和最终尺寸视觉检查。跨语言 CSV/MAT 交接是可选路线，不是强制要求。
+论文图可使用 Python/Matplotlib 或 MATLAB 原生生成；两条路线都必须保留源数据、生成代码、统计定义、矢量/位图导出和最终尺寸视觉检查。跨语言 CSV/MAT 交接是可选路线，不是强制要求。
 
 ## 安装
 
@@ -433,7 +470,10 @@ math-skill-dp/
 │  ├─ blind_modeling_benchmark.py
 │  ├─ audit_modeling_project.py
 │  ├─ audit_figure_bundle.py
-│  └─ build_modeling_diagram.py
+│  ├─ build_modeling_diagram.py
+│  ├─ build_cumcm_latex.py
+│  ├─ audit_cumcm_latex.py
+│  └─ provenance_watermark.py
 ├─ references/                    # 按任务渐进加载的方法参考
 ├─ benchmarks/                    # 只含外部链接、哈希、响应模板和隔离评分契约
 ├─ assets/
